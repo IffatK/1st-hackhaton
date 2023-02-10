@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root{
+    --maincolor:#c4c9cd;
+    --seondcolor:#dbdbe2;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: .2s;
+    outline: none;
+    text-transform: capitalize;
+    text-decoration: none;
+}
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 7%;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    z-index: 100000;
+}
+.header #logo{
+    font-size: 3.5rem;
+    color: black;
+}
+.navbar a{
+    color: black;
+    font-size: 1.7rem;
+    margin-left: 1rem;
+}
+.navbar a:hover{
+    background-color: var(--maincolor);
+    color: white;
+    border-radius: 10px;
+    padding: 1rem 3rem;
+}
+.icons div{
+    font-size: 2rem;
+    margin-left: 1rem;
+    color: black;
+    cursor: pointer;
+}
+.icons div:hover{
+    background-color: var(--maincolor);
+    color: white;
+    border-radius: 10px;
+    padding: 1rem 3rem;
+}
+#menu-bar{
+    display: none;
+}
+
+.search-box.active{
+    left: 40%;
+}
+.search-box{
+    position: absolute;
+    top: 110%;
+    left: 100%;
+    width: 50%;
+    right: 2rem;
+}
+.search-box input{
+    padding: 1.5rem 2rem;
+    width: 100%;
+    border-radius: 15px;
+    border: 0;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.shopping-cart.active{
+    left: 70%;
+}
+.shopping-cart{
+    position: absolute;
+    top: 110%;
+    width: 40rem;
+    right: 2rem;
+    left: 100%;
+    background: white;
+}
+.shopping-box{
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: .5rem;
+}
+.shopping-box img{
+    width: 150px;
+}
+.fa-times{
+    position: absolute;
+    top: 50%;
+    right: 2rem;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    cursor: pointer;
+}
+.fa-times:hover{
+    color: var(--maincolor);
+}
+.shop-content h3{
+    font-size: 1.7rem;
+    padding: .5rem;
+}
+.shop-content span{
+    margin: .5rem;
+    font-size: 1.7rem;
+}
+
+.navbar.active{
+    left: 0;
+}
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="#" id="logo">your <span>logo</span></a>
+        <nav class="navbar">
+            <a href="#">home</a>
+            <a href="#">women</a>
+            <a href="#">men</a>
+            <a href="#">gallery</a>
+            <a href="#">contact</a>
+        </nav>
+        <div class="icons">
+            <div class="fas fa-bars" id="menu-bar"></div>
+            <div class="fas fa-shopping-cart" id="shop-cart"></div>
+            <div class="fas fa-search" id="search-bar"></div>
+        </div>
+
+        <div class="search-box">
+            <input type="search" placeholder="search here">
+        </div>
+        <!-- shoping cart -->
+
+        <div class="shopping-cart">
+            <div class="shopping-box">
+                <i class="fas fa-times"></i>
+                <img src="images/shirt1.png" alt="">
+                <div class="shop-content">
+                    <h3>online shopping</h3>
+                    <span class="quantity">1</span>
+                    <span class="multiply">*</span>
+                    <span class="multiply">$3.00</span>
+                </div>
+            </div>
+            <div class="shopping-box">
+                <i class="fas fa-times"></i>
+                <img src="images/shirt1.png" alt="">
+                <div class="shop-content">
+                    <h3>online shopping</h3>
+                    <span class="quantity">1</span>
+                    <span class="multiply">*</span>
+                    <span class="multiply">$3.00</span>
+                </div>
+            </div>
+            <div class="shopping-box">
+                <i class="fas fa-times"></i>
+                <img src="images/shirt1.png" alt="">
+                <div class="shop-content">
+                    <h3>online shopping</h3>
+                    <span class="quantity">1</span>
+                    <span class="multiply">*</span>
+                    <span class="multiply">$3.00</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- shoping cart ended  -->
+
+
+
+    </header>
+    <script>
+        let searchbar = document.querySelector('#search-bar');
+let searchbox = document.querySelector('.search-box');
+let shop = document.querySelector('#shop-cart');
+let shopcart = document.querySelector('.shopping-cart');
+let menubar = document.querySelector('#menu-bar');
+let mynav = document.querySelector('.navbar');
+
+
+
+
+
+
+searchbar.onclick = () =>{
+    searchbox.classList.toggle('active')
+}
+shop.onclick = () =>{
+    shopcart.classList.toggle('active');
+}
+menubar.onclick = () =>{
+    mynav.classList.toggle('active');
+}
+
+$('.slides').slick({
+    dots: false,
+    infinite: false,
+    autoplay:true,
+    arrows:false,   
+    speed: 200,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+     
+    ]
+  });
+    </script>
+</body>
+</html>

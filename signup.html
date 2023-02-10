@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Sign Up/Login Page</title>
+    <link rel="stylesheet" type="text/css" href="signup.css">
+  </head>
+  <body>
+    <div id="container">
+      <h1>Sign Up/Login Page</h1>
+      <div id="formContainer">
+        <form id="signupForm">
+          <h2>Sign Up</h2>
+          <label for="signupUsername">Username:</label>
+          <input type="text" id="signupUsername" name="signupUsername">
+          <br>
+          <label for="signupPassword">Password:</label>
+          <input type="password" id="signupPassword" name="signupPassword">
+          <br>
+          <button type="submit">Sign Up</button>
+        </form>
+        <form id="loginForm">
+          <h2>Login</h2>
+          <label for="loginUsername">Username:</label>
+          <input type="text" id="loginUsername" name="loginUsername">
+          <br>
+          <label for="loginPassword">Password:</label>
+          <input type="password" id="loginPassword" name="loginPassword">
+          <br>
+          <button type="submit">Login</button>
+        </form>
+      </div>
+    </div>
+    <script>
+        const signupForm = document.querySelector("#signupForm");
+const loginForm = document.querySelector("#loginForm");
+
+signupForm.addEventListener("submit", function(event) {
+  event.preventDefault();
+  const signupUsername = document.querySelector("#signupUsername").value;
+  const signupPassword = document.querySelector("#signupPassword").value;})
+    </script>
+  </body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="home.css">
+    <title>Home</title>
+ 
+</head>
+<body>
+    <header class="nav-cont">
+        <div class="left"> <div class="logo">Mfas</div></div>
+       
+        <div class="middle-sec"><input class="search-btn" type="search" placeholder="Search Your Fashion.." ></div>
+        
+        <div class="right-sec">
+                <ul class="lists">
+                    <li> <a href="home.html">Home</a></li>
+                   <!-- <li><a href="#">Contact US</a></li> -->
+                   <li><a href="mens.html">Mens</a></li>
+                   <li><a href="/womens.html">Womens</a></li>
+                  <div ><a class="li" href="signup.html">Sign Up</a></div>
+                </ul>
+        </div>  
+    </header>
+
+    <section class="section">
+        <img src="/images/temp-1.png" alt="" class="template">
+    </section>
+
+  
+    <form action="http://localhost:6000/upload" method="post" enctype="multipart/form-data" class="choose-file">
+  <input type="file" name="file" class="file-btn">
+  <input type="submit" value="Upload" class="submit">
+</form>
+      <script>
+        function uploadImage() {
+          var fileInput = document.getElementById('fileInput');
+          var file = fileInput.files[0];
+          var formData = new FormData();
+          formData.append('file', file);
+          
+          var xhr = new XMLHttpRequest();
+          xhr.open('POST', 'upload.php', true);
+          xhr.onload = function () {
+            if (xhr.status === 200) {
+              alert('Image has been uploaded successfully');
+            } else {
+              alert('Error while uploading the image');
+            }
+          };
+          xhr.send(formData);
+        }
+      </script>
+    
+      
+
+    	
+
+</body>
+
+</html>

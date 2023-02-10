@@ -1,0 +1,88 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    /* height: 1000vh; */
+  }
+  
+  header {
+    background-color: lightgray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    position: sticky;
+    right: 0;
+    left: 0;
+    top:0;
+  }
+  
+  header h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 24px;
+  }
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto',sans-serif;
+}
+
+.nav-cont{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0f0629;
+    padding: 20px;
+    font-size: 16px;
+   color: white;
+}
+.logo{
+    margin-left: 2em ;
+    cursor: pointer;
+}
+.right-sec ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.right-sec ul li {
+    display: flex;
+    justify-content: space-between;
+    text-decoration: none;
+    list-style: none;
+
+}
+.right-sec ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 10px;
+   
+}
+ul li  a  {
+    width: 100px;
+	margin-right: 2em;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-shrink: 0;
+    text-decoration: none;
+    color: white;
+}
+.li{
+    text-decoration: none;
+    color: white;
+}
+.search-btn{
+    width: 400px;
+    padding: 8px;
+    border-radius: 4px;
+    border: none;
+    box-shadow: 1px 2px 2px rgba(0,0,0,0.2);
+}
